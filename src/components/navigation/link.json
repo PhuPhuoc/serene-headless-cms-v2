@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_navigation_links",
+  "info": {
+    "displayName": "link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "internal",
+      "enum": [
+        "internal",
+        "external",
+        "modal"
+      ]
+    },
+    "modalKey": {
+      "type": "enumeration",
+      "enum": [
+        "contactUs",
+        "joinMembership"
+      ]
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "url": {
+      "type": "string"
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_navigation_menu_items",
+  "info": {
+    "displayName": "menu-item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false,
+      "required": true
+    },
+    "children": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
