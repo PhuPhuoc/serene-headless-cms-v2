@@ -43,6 +43,20 @@
         }
       },
       "default": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "block.hero",
+        "block.intro",
+        "block.day-at",
+        "block.split-section"
+      ]
     }
   }
 }

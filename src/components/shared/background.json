@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_backgrounds",
+  "info": {
+    "displayName": "background",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "color",
+      "enum": [
+        "color",
+        "image"
+      ]
+    },
+    "hexColor": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 8
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_block_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "subheadline": {
+      "type": "string"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageCaption": {
+      "type": "string"
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "secondaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

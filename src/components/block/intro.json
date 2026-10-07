@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_block_intros",
+  "info": {
+    "displayName": "intro",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "component",
+      "component": "shared.tag",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_navigation_footer_columns",
+  "info": {
+    "displayName": "footer-column",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

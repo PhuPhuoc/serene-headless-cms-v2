@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_block_split_sections",
+  "info": {
+    "displayName": "split-section",
+    "icon": "puzzle"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imageCaption": {
+      "type": "string"
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "required": false,
+      "default": "left",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "ctaVariant": {
+      "type": "enumeration",
+      "required": false,
+      "default": "solid-light",
+      "enum": [
+        "solid-dark",
+        "solid-light"
+      ]
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

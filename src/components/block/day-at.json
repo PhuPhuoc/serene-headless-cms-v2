@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_block_day_ats",
+  "info": {
+    "displayName": "day-at",
+    "icon": "sun"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "required": true
+    },
+    "heading": {
+      "type": "text"
+    },
+    "moments": {
+      "type": "component",
+      "component": "shared.day-moment",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
