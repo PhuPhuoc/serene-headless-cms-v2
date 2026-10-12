@@ -45,25 +45,58 @@ export interface BlockIntro extends Struct.ComponentSchema {
   };
 }
 
-export interface BlockSplitSection extends Struct.ComponentSchema {
-  collectionName: 'components_block_split_sections';
+export interface BlockSimpleSection extends Struct.ComponentSchema {
+  collectionName: 'components_block_simple_sections';
   info: {
-    displayName: 'split-section';
-    icon: 'puzzle';
+    displayName: 'simple-section';
+    icon: 'expand';
   };
   attributes: {
     background: Schema.Attribute.Component<'shared.background', false> &
       Schema.Attribute.Required;
-    body: Schema.Attribute.Blocks;
+    body: Schema.Attribute.Text;
     cta: Schema.Attribute.Component<'navigation.link', false>;
     ctaVariant: Schema.Attribute.Enumeration<['solid-dark', 'solid-light']> &
+      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'solid-light'>;
     eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
-    heading: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files'>;
     imageCaption: Schema.Attribute.String;
     imagePosition: Schema.Attribute.Enumeration<['left', 'right']> &
+      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'left'>;
+  };
+}
+
+export interface BlockVisit extends Struct.ComponentSchema {
+  collectionName: 'components_block_visits';
+  info: {
+    displayName: 'visit';
+    icon: 'paperPlane';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    directionsCta: Schema.Attribute.Component<'navigation.link', false>;
+    email: Schema.Attribute.Email;
+    emailPlaceholder: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Email address'>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'visit'>;
+    heading: Schema.Attribute.Text & Schema.Attribute.Required;
+    latitude: Schema.Attribute.Decimal;
+    longitude: Schema.Attribute.Decimal;
+    mapEmbedUrl: Schema.Attribute.String;
+    mapImage: Schema.Attribute.Media<'images' | 'files'>;
+    newsletterText: Schema.Attribute.String;
+    note: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    pinSubtitle: Schema.Attribute.String;
+    pinTitle: Schema.Attribute.String;
+    submitLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Subscribe'>;
+    zaloUrl: Schema.Attribute.String;
   };
 }
 
@@ -123,9 +156,9 @@ export interface SharedBackground extends Struct.ComponentSchema {
         minLength: 3;
       }>;
     image: Schema.Attribute.Media<'images' | 'files'>;
-    type: Schema.Attribute.Enumeration<['color', 'image']> &
+    type: Schema.Attribute.Enumeration<['default', 'color', 'image']> &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'color'>;
+      Schema.Attribute.DefaultTo<'default'>;
   };
 }
 
@@ -161,7 +194,8 @@ declare module '@strapi/strapi' {
       'block.day-at': BlockDayAt;
       'block.hero': BlockHero;
       'block.intro': BlockIntro;
-      'block.split-section': BlockSplitSection;
+      'block.simple-section': BlockSimpleSection;
+      'block.visit': BlockVisit;
       'navigation.footer-column': NavigationFooterColumn;
       'navigation.link': NavigationLink;
       'navigation.menu-item': NavigationMenuItem;

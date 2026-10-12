@@ -1,0 +1,74 @@
+{
+  "collectionName": "components_block_visits",
+  "info": {
+    "displayName": "visit",
+    "icon": "paperPlane"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "visit",
+      "required": true
+    },
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "zaloUrl": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "note": {
+      "type": "string"
+    },
+    "directionsCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "pinTitle": {
+      "type": "string"
+    },
+    "pinSubtitle": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "mapEmbedUrl": {
+      "type": "string"
+    },
+    "mapImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "newsletterText": {
+      "type": "string"
+    },
+    "emailPlaceholder": {
+      "type": "string",
+      "default": "Email address"
+    },
+    "submitLabel": {
+      "type": "string",
+      "default": "Subscribe"
+    }
+  },
+  "config": {}
+}

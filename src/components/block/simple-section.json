@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_block_split_sections",
+  "collectionName": "components_block_simple_sections",
   "info": {
-    "displayName": "split-section",
-    "icon": "puzzle"
+    "displayName": "simple-section",
+    "icon": "expand"
   },
   "options": {},
   "attributes": {
@@ -11,11 +11,11 @@
       "required": true
     },
     "heading": {
-      "type": "text",
+      "type": "string",
       "required": true
     },
     "body": {
-      "type": "blocks"
+      "type": "text"
     },
     "image": {
       "type": "media",
@@ -30,7 +30,7 @@
     },
     "imagePosition": {
       "type": "enumeration",
-      "required": false,
+      "required": true,
       "default": "left",
       "enum": [
         "left",
@@ -44,7 +44,7 @@
     },
     "ctaVariant": {
       "type": "enumeration",
-      "required": false,
+      "required": true,
       "default": "solid-light",
       "enum": [
         "solid-dark",

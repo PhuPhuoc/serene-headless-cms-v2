@@ -591,7 +591,13 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['block.hero', 'block.intro', 'block.day-at', 'block.split-section']
+      [
+        'block.hero',
+        'block.intro',
+        'block.day-at',
+        'block.simple-section',
+        'block.visit',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

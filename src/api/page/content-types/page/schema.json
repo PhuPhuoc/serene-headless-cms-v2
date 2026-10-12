@@ -55,7 +55,8 @@
         "block.hero",
         "block.intro",
         "block.day-at",
-        "block.split-section"
+        "block.simple-section",
+        "block.visit"
       ]
     }
   }

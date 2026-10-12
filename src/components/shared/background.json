@@ -9,8 +9,9 @@
     "type": {
       "type": "enumeration",
       "required": true,
-      "default": "color",
+      "default": "default",
       "enum": [
+        "default",
         "color",
         "image"
       ]
