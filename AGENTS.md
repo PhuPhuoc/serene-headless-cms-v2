@@ -53,7 +53,7 @@ navigation.link ── oneToOne ──► page
 | `src/components/shared/` | Reusable atoms (`background`, `tag`, `features`, `pricing-tier`, `day-moment`) |
 | `src/components/navigation/` | `link`, `menu-item`, `footer-column` |
 | `src/content-structure/groups.json` | Admin content-manager folder grouping; loaded by Strapi core (`version: 1`, max depth 3). No repo code reads it |
-| `src/admin/` | Admin customization; only `*.example.tsx` exist, so none is active |
+| `src/admin/` | Admin customization; `app.tsx` is active (Serene branding: login copy, logo, title/favicon) |
 | `src/extensions/` | Plugin overrides; currently empty |
 | `config/` | Server, admin, API, DB, middleware, plugin config (TypeScript) |
 | `types/generated/` | Generated TS declarations for schemas/components — committed |
@@ -99,7 +99,7 @@ Notes: `strapi export -f` takes a base name and appends `.tar.gz`; `strapi impor
 - **Error handling**: rely on core error middleware/`ApplicationError` from `@strapi/utils`. Do not swallow errors in controllers; if overriding, call `super`/`sanitizeOutput` and preserve permissions.
 - **Formatting**: no ESLint/Prettier config is committed. Match existing style — 2-space indent, single quotes in TS, double quotes in schema JSON, trailing commas in TS objects.
 - **Never commit**: `.env`, `dist/`, `.strapi/`, `public/uploads/*`, `*.tar.gz`, `*.log`.
-- **Admin**: customizing requires renaming `src/admin/app.example.tsx` → `app.tsx` (and `vite.config.example.ts` → `vite.config.ts`). `src/admin/` is excluded from the server tsconfig and compiled separately via `src/admin/tsconfig.json`.
+- **Admin**: `src/admin/app.tsx` is the active customization entrypoint; it sets the `Serene` brand copy, `/uploads/logo.jpg` auth/menu logo, browser title, and favicon. For Vite config changes, rename `vite.config.example.ts` → `vite.config.ts`. `src/admin/` is excluded from the server tsconfig and compiled separately via `src/admin/tsconfig.json`.
 
 ## Important Files
 
