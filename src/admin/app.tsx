@@ -68,7 +68,9 @@ const replaceTitleBrand = () => {
     document.title === `Quản trị ${BRAND_NAME}`;
 
   if (isAdminTitle) {
-    document.title = adminTitle;
+    if (document.title !== adminTitle) {
+      document.title = adminTitle;
+    }
     return;
   }
 
