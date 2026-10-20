@@ -1,4 +1,4 @@
-BACKUP_FILE = backup.tar.gz
+BACKUP_FILE = backup2010
 
 # Tạo bản sao lưu vào file backup.tar.gz
 export:
