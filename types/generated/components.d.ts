@@ -1,5 +1,26 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlockClubEvents extends Struct.ComponentSchema {
+  collectionName: 'components_block_club_events';
+  info: {
+    displayName: 'club-event';
+    icon: 'music';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Club Events'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    limit: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<7>;
+    note: Schema.Attribute.Text;
+    primaryCta: Schema.Attribute.Component<'navigation.link', false>;
+    secondaryCta: Schema.Attribute.Component<'navigation.link', false>;
+  };
+}
+
 export interface BlockDayAt extends Struct.ComponentSchema {
   collectionName: 'components_block_day_ats';
   info: {
@@ -45,6 +66,25 @@ export interface BlockIntro extends Struct.ComponentSchema {
   };
 }
 
+export interface BlockMembership extends Struct.ComponentSchema {
+  collectionName: 'components_block_memberships';
+  info: {
+    displayName: 'membership';
+    icon: 'alien';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'membership'>;
+    features: Schema.Attribute.Component<'shared.features', true>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    primaryCta: Schema.Attribute.Component<'navigation.link', false>;
+    secondaryCta: Schema.Attribute.Component<'navigation.link', false>;
+  };
+}
+
 export interface BlockSimpleSection extends Struct.ComponentSchema {
   collectionName: 'components_block_simple_sections';
   info: {
@@ -66,6 +106,25 @@ export interface BlockSimpleSection extends Struct.ComponentSchema {
     imagePosition: Schema.Attribute.Enumeration<['left', 'right']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'left'>;
+  };
+}
+
+export interface BlockTier extends Struct.ComponentSchema {
+  collectionName: 'components_block_tiers';
+  info: {
+    displayName: 'tier';
+    icon: 'priceTag';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Tiers'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    note: Schema.Attribute.Text;
+    primaryCta: Schema.Attribute.Component<'navigation.link', false>;
+    secondaryCta: Schema.Attribute.Component<'navigation.link', false>;
+    tiers: Schema.Attribute.Component<'shared.pricing-tier', true>;
   };
 }
 
@@ -177,6 +236,35 @@ export interface SharedDayMoment extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_shared_features';
+  info: {
+    displayName: 'feature';
+    icon: 'check';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedPricingTier extends Struct.ComponentSchema {
+  collectionName: 'components_shared_pricing_tiers';
+  info: {
+    displayName: 'pricing-tier';
+    icon: 'priceTag';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    period: Schema.Attribute.String;
+    price: Schema.Attribute.BigInteger;
+    priceLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'\u20AB'>;
+  };
+}
+
 export interface SharedTag extends Struct.ComponentSchema {
   collectionName: 'components_shared_tags';
   info: {
@@ -191,16 +279,21 @@ export interface SharedTag extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
+      'block.club-events': BlockClubEvents;
       'block.day-at': BlockDayAt;
       'block.hero': BlockHero;
       'block.intro': BlockIntro;
+      'block.membership': BlockMembership;
       'block.simple-section': BlockSimpleSection;
+      'block.tier': BlockTier;
       'block.visit': BlockVisit;
       'navigation.footer-column': NavigationFooterColumn;
       'navigation.link': NavigationLink;
       'navigation.menu-item': NavigationMenuItem;
       'shared.background': SharedBackground;
       'shared.day-moment': SharedDayMoment;
+      'shared.features': SharedFeatures;
+      'shared.pricing-tier': SharedPricingTier;
       'shared.tag': SharedTag;
     }
   }

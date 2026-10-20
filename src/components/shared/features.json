@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_features",
+  "info": {
+    "displayName": "feature",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

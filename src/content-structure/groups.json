@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "sections": {
+    "collectionTypes": {
+      "groups": [
+        {
+          "parent": null,
+          "name": "Event",
+          "id": "grp_311bdf47dfb84c3aae46de8b",
+          "children": [
+            {
+              "uid": "api::event-venue.event-venue",
+              "type": "contentType"
+            },
+            {
+              "uid": "api::club-event.club-event",
+              "type": "contentType"
+            },
+            {
+              "uid": "api::event-category.event-category",
+              "type": "contentType"
+            }
+          ]
+        }
+      ]
+    },
+    "singleTypes": {
+      "groups": []
+    }
+  }
+}

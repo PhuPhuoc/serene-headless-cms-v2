@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_venues",
+  "info": {
+    "singularName": "event-venue",
+    "pluralName": "event-venues",
+    "displayName": "Venue"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::club-event.club-event",
+      "mappedBy": "venues"
+    }
+  }
+}

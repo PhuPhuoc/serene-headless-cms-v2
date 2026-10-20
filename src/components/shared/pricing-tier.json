@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_pricing_tiers",
+  "info": {
+    "displayName": "pricing-tier",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "priceLabel": {
+      "type": "string",
+      "default": "₫",
+      "required": true
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "period": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

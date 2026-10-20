@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "club_events",
+  "info": {
+    "singularName": "club-event",
+    "pluralName": "club-events",
+    "displayName": "Club-event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "date": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "venues": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event-venue.event-venue",
+      "inversedBy": "events"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-category.event-category",
+      "mappedBy": "events"
+    }
+  }
+}

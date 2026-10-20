@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_block_club_events",
+  "info": {
+    "displayName": "club-event",
+    "icon": "music"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Club Events",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "limit": {
+      "type": "integer",
+      "required": true,
+      "default": 7
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "secondaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

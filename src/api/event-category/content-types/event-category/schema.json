@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_categories",
+  "info": {
+    "singularName": "event-category",
+    "pluralName": "event-categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::club-event.club-event",
+      "inversedBy": "categories"
+    }
+  }
+}

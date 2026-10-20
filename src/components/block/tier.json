@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_block_tiers",
+  "info": {
+    "displayName": "tier",
+    "icon": "priceTag"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Tiers",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "text"
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "secondaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "tiers": {
+      "type": "component",
+      "component": "shared.pricing-tier",
+      "repeatable": true
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

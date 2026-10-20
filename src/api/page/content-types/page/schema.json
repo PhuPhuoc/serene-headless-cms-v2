@@ -56,7 +56,10 @@
         "block.intro",
         "block.day-at",
         "block.simple-section",
-        "block.visit"
+        "block.visit",
+        "block.membership",
+        "block.tier",
+        "block.club-events"
       ]
     }
   }
