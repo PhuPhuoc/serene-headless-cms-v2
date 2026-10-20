@@ -1,3 +1,5 @@
+import vi from './translations/vi';
+
 const BRAND_NAME = 'Serene';
 const BRAND_LOGO_URL = '/uploads/logo.jpg';
 
@@ -58,6 +60,18 @@ const translations: Record<string, string> = {
 };
 
 const replaceTitleBrand = () => {
+  const isVietnamese = localStorage.getItem('strapi-admin-language') === 'vi';
+  const adminTitle = isVietnamese ? `Quản trị ${BRAND_NAME}` : `${BRAND_NAME} Admin`;
+  const isAdminTitle =
+    document.title === 'Strapi Admin' ||
+    document.title === `${BRAND_NAME} Admin` ||
+    document.title === `Quản trị ${BRAND_NAME}`;
+
+  if (isAdminTitle) {
+    document.title = adminTitle;
+    return;
+  }
+
   if (document.title.includes('Strapi')) {
     document.title = document.title.replace(/Strapi/g, BRAND_NAME);
   }
@@ -85,6 +99,7 @@ const replaceFavicon = () => {
 
 export default {
   config: {
+    locales: ['en', 'vi'],
     auth: {
       logo: BRAND_LOGO_URL,
     },
@@ -93,6 +108,7 @@ export default {
     },
     translations: {
       en: translations,
+      vi,
     },
   },
   bootstrap() {
