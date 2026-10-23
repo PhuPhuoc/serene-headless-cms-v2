@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_shared_exhibitions",
+  "info": {
+    "displayName": "exhibition",
+    "icon": "plane"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "artistName": {
+      "type": "string",
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "curatorialNote": {
+      "type": "text"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,5 +1,21 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlockArtAndCulture extends Struct.ComponentSchema {
+  collectionName: 'components_block_art_and_cultures';
+  info: {
+    displayName: 'art-and-culture';
+    icon: 'picture';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    cta: Schema.Attribute.Component<'navigation.link', false>;
+    exhibition: Schema.Attribute.Component<'shared.exhibition', false>;
+    eyebrowe: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Art & Culture'>;
+  };
+}
+
 export interface BlockClubEvents extends Struct.ComponentSchema {
   collectionName: 'components_block_club_events';
   info: {
@@ -85,6 +101,24 @@ export interface BlockMembership extends Struct.ComponentSchema {
   };
 }
 
+export interface BlockPrivateEvent extends Struct.ComponentSchema {
+  collectionName: 'components_block_private_events';
+  info: {
+    displayName: 'private-event';
+    icon: 'lock';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    description: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Private Event'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    primaryCta: Schema.Attribute.Component<'navigation.link', false>;
+    secondaryCta: Schema.Attribute.Component<'navigation.link', false>;
+  };
+}
+
 export interface BlockSimpleSection extends Struct.ComponentSchema {
   collectionName: 'components_block_simple_sections';
   info: {
@@ -96,9 +130,6 @@ export interface BlockSimpleSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     body: Schema.Attribute.Text;
     cta: Schema.Attribute.Component<'navigation.link', false>;
-    ctaVariant: Schema.Attribute.Enumeration<['solid-dark', 'solid-light']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'solid-light'>;
     eyebrow: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images' | 'files'>;
@@ -159,6 +190,39 @@ export interface BlockVisit extends Struct.ComponentSchema {
   };
 }
 
+export interface BlockWellnessAndLeisure extends Struct.ComponentSchema {
+  collectionName: 'components_block_wellness_and_leisures';
+  info: {
+    displayName: 'wellness-and-leisure';
+    icon: 'walk';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    bentos: Schema.Attribute.Component<'shared.bento', true>;
+    description: Schema.Attribute.Text;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Wellness & Leisure'>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface BlockWineAndDine extends Struct.ComponentSchema {
+  collectionName: 'components_block_wine_and_dines';
+  info: {
+    displayName: 'wine-and-dine';
+    icon: 'cup';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Dine & Wine'>;
+    heading: Schema.Attribute.String;
+    venues: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
 export interface NavigationFooterColumn extends Struct.ComponentSchema {
   collectionName: 'components_navigation_footer_columns';
   info: {
@@ -179,13 +243,20 @@ export interface NavigationLink extends Struct.ComponentSchema {
     icon: 'link';
   };
   attributes: {
+    ctaBehavior: Schema.Attribute.Enumeration<
+      ['internal', 'external', 'modal']
+    > &
+      Schema.Attribute.DefaultTo<'internal'>;
+    ctaVariant: Schema.Attribute.Enumeration<
+      ['none', 'solid', 'outline', 'underline']
+    > &
+      Schema.Attribute.DefaultTo<'none'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     modalKey: Schema.Attribute.Enumeration<['contactUs', 'joinMembership']>;
     openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
-    type: Schema.Attribute.Enumeration<['internal', 'external', 'modal']> &
-      Schema.Attribute.DefaultTo<'internal'>;
     url: Schema.Attribute.String;
+    withIcon: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
   };
 }
 
@@ -221,6 +292,38 @@ export interface SharedBackground extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBento extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bentos';
+  info: {
+    displayName: 'bento';
+    icon: 'gift';
+  };
+  attributes: {
+    defaultHexColor: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'#9A7B66'>;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images' | 'files', true>;
+  };
+}
+
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'card';
+    icon: 'puzzle';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'navigation.link', false>;
+    ctaStyle: Schema.Attribute.Enumeration<['button', 'link']> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    imageCaption: Schema.Attribute.String;
+  };
+}
+
 export interface SharedDayMoment extends Struct.ComponentSchema {
   collectionName: 'components_shared_day_moments';
   info: {
@@ -232,6 +335,24 @@ export interface SharedDayMoment extends Struct.ComponentSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedExhibition extends Struct.ComponentSchema {
+  collectionName: 'components_shared_exhibitions';
+  info: {
+    displayName: 'exhibition';
+    icon: 'plane';
+  };
+  attributes: {
+    artistName: Schema.Attribute.String & Schema.Attribute.Required;
+    coverImage: Schema.Attribute.Media<'images' | 'files', true>;
+    cta: Schema.Attribute.Component<'navigation.link', false>;
+    curatorialNote: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
+    endDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    startDate: Schema.Attribute.Date & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -279,19 +400,26 @@ export interface SharedTag extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
+      'block.art-and-culture': BlockArtAndCulture;
       'block.club-events': BlockClubEvents;
       'block.day-at': BlockDayAt;
       'block.hero': BlockHero;
       'block.intro': BlockIntro;
       'block.membership': BlockMembership;
+      'block.private-event': BlockPrivateEvent;
       'block.simple-section': BlockSimpleSection;
       'block.tier': BlockTier;
       'block.visit': BlockVisit;
+      'block.wellness-and-leisure': BlockWellnessAndLeisure;
+      'block.wine-and-dine': BlockWineAndDine;
       'navigation.footer-column': NavigationFooterColumn;
       'navigation.link': NavigationLink;
       'navigation.menu-item': NavigationMenuItem;
       'shared.background': SharedBackground;
+      'shared.bento': SharedBento;
+      'shared.card': SharedCard;
       'shared.day-moment': SharedDayMoment;
+      'shared.exhibition': SharedExhibition;
       'shared.features': SharedFeatures;
       'shared.pricing-tier': SharedPricingTier;
       'shared.tag': SharedTag;

@@ -42,15 +42,6 @@
       "component": "navigation.link",
       "repeatable": false
     },
-    "ctaVariant": {
-      "type": "enumeration",
-      "required": true,
-      "default": "solid-light",
-      "enum": [
-        "solid-dark",
-        "solid-light"
-      ]
-    },
     "background": {
       "type": "component",
       "component": "shared.background",

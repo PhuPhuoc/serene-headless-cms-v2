@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_bentos",
+  "info": {
+    "displayName": "bento",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "defaultHexColor": {
+      "type": "string",
+      "default": "#9A7B66",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    }
+  },
+  "config": {}
+}

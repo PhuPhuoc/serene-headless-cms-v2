@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_block_wellness_and_leisures",
+  "info": {
+    "displayName": "wellness-and-leisure",
+    "icon": "walk"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Wellness & Leisure",
+      "required": true
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bentos": {
+      "type": "component",
+      "component": "shared.bento",
+      "repeatable": true
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

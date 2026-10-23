@@ -4,23 +4,23 @@
     "collectionTypes": {
       "groups": [
         {
-          "parent": null,
-          "name": "Event",
-          "id": "grp_311bdf47dfb84c3aae46de8b",
           "children": [
             {
-              "uid": "api::event-venue.event-venue",
-              "type": "contentType"
+              "type": "contentType",
+              "uid": "api::event-venue.event-venue"
             },
             {
-              "uid": "api::club-event.club-event",
-              "type": "contentType"
+              "type": "contentType",
+              "uid": "api::club-event.club-event"
             },
             {
-              "uid": "api::event-category.event-category",
-              "type": "contentType"
+              "type": "contentType",
+              "uid": "api::event-category.event-category"
             }
-          ]
+          ],
+          "parent": null,
+          "name": "Event",
+          "id": "grp_311bdf47dfb84c3aae46de8b"
         }
       ]
     },

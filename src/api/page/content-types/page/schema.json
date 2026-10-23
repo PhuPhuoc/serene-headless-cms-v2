@@ -59,7 +59,11 @@
         "block.visit",
         "block.membership",
         "block.tier",
-        "block.club-events"
+        "block.club-events",
+        "block.private-event",
+        "block.wine-and-dine",
+        "block.wellness-and-leisure",
+        "block.art-and-culture"
       ]
     }
   }

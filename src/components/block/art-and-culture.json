@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_block_art_and_cultures",
+  "info": {
+    "displayName": "art-and-culture",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrowe": {
+      "type": "string",
+      "default": "Art & Culture",
+      "required": true
+    },
+    "exhibition": {
+      "type": "component",
+      "component": "shared.exhibition",
+      "repeatable": false
+    },
+    "cta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

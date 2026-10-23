@@ -10,7 +10,17 @@
       "type": "string",
       "required": true
     },
-    "type": {
+    "ctaVariant": {
+      "type": "enumeration",
+      "default": "none",
+      "enum": [
+        "none",
+        "solid",
+        "outline",
+        "underline"
+      ]
+    },
+    "ctaBehavior": {
       "type": "enumeration",
       "default": "internal",
       "enum": [
@@ -18,6 +28,11 @@
         "external",
         "modal"
       ]
+    },
+    "withIcon": {
+      "type": "boolean",
+      "required": false,
+      "default": true
     },
     "modalKey": {
       "type": "enumeration",

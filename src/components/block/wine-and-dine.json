@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_block_wine_and_dines",
+  "info": {
+    "displayName": "wine-and-dine",
+    "icon": "cup"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Dine & Wine",
+      "required": true
+    },
+    "heading": {
+      "type": "string"
+    },
+    "venues": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

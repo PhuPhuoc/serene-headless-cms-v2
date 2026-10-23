@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_block_private_events",
+  "info": {
+    "displayName": "private-event",
+    "icon": "lock"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Private Event",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "secondaryCta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
