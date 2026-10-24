@@ -140,6 +140,27 @@ export interface BlockSimpleSection extends Struct.ComponentSchema {
   };
 }
 
+export interface BlockStay extends Struct.ComponentSchema {
+  collectionName: 'components_block_stays';
+  info: {
+    displayName: 'stay';
+    icon: 'gate';
+  };
+  attributes: {
+    background: Schema.Attribute.Component<'shared.background', false>;
+    cta: Schema.Attribute.Component<'navigation.link', false>;
+    description: Schema.Attribute.String;
+    eyebrow: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'The Stay Collection'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    includesTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Every residence includes'>;
+    yourStayLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Your stay'>;
+  };
+}
+
 export interface BlockTier extends Struct.ComponentSchema {
   collectionName: 'components_block_tiers';
   info: {
@@ -408,6 +429,7 @@ declare module '@strapi/strapi' {
       'block.membership': BlockMembership;
       'block.private-event': BlockPrivateEvent;
       'block.simple-section': BlockSimpleSection;
+      'block.stay': BlockStay;
       'block.tier': BlockTier;
       'block.visit': BlockVisit;
       'block.wellness-and-leisure': BlockWellnessAndLeisure;

@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_block_stays",
+  "info": {
+    "displayName": "stay",
+    "icon": "gate"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "The Stay Collection",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "includesTitle": {
+      "type": "string",
+      "default": "Every residence includes"
+    },
+    "yourStayLabel": {
+      "type": "string",
+      "default": "Your stay"
+    },
+    "cta": {
+      "type": "component",
+      "component": "navigation.link",
+      "repeatable": false
+    },
+    "background": {
+      "type": "component",
+      "component": "shared.background",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

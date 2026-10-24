@@ -63,7 +63,8 @@
         "block.private-event",
         "block.wine-and-dine",
         "block.wellness-and-leisure",
-        "block.art-and-culture"
+        "block.art-and-culture",
+        "block.stay"
       ]
     }
   }
