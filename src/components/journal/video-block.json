@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_journal_video_blocks",
+  "info": {
+    "displayName": "video-block",
+    "icon": "monitor"
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "videos"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    },
+    "caption": {
+      "type": "string"
+    },
+    "isExternalVideo": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

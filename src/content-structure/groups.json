@@ -4,23 +4,38 @@
     "collectionTypes": {
       "groups": [
         {
-          "children": [
-            {
-              "type": "contentType",
-              "uid": "api::event-venue.event-venue"
-            },
-            {
-              "type": "contentType",
-              "uid": "api::club-event.club-event"
-            },
-            {
-              "type": "contentType",
-              "uid": "api::event-category.event-category"
-            }
-          ],
           "parent": null,
           "name": "Event",
-          "id": "grp_311bdf47dfb84c3aae46de8b"
+          "id": "grp_311bdf47dfb84c3aae46de8b",
+          "children": [
+            {
+              "uid": "api::event-venue.event-venue",
+              "type": "contentType"
+            },
+            {
+              "uid": "api::club-event.club-event",
+              "type": "contentType"
+            },
+            {
+              "uid": "api::event-category.event-category",
+              "type": "contentType"
+            }
+          ]
+        },
+        {
+          "parent": null,
+          "name": "Journal",
+          "id": "grp_9da5f09377694c02a5a6e0e0",
+          "children": [
+            {
+              "uid": "api::post.post",
+              "type": "contentType"
+            },
+            {
+              "uid": "api::author.author",
+              "type": "contentType"
+            }
+          ]
         }
       ]
     },

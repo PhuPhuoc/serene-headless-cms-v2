@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_journal_gallery_blocks",
+  "info": {
+    "displayName": "gallery-block",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "caption": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "required": true,
+      "default": "carousel",
+      "enum": [
+        "carousel",
+        "masonry-2",
+        "masonry-3"
+      ]
+    }
+  },
+  "config": {}
+}

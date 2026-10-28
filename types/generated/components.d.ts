@@ -244,6 +244,86 @@ export interface BlockWineAndDine extends Struct.ComponentSchema {
   };
 }
 
+export interface JournalGalleryBlock extends Struct.ComponentSchema {
+  collectionName: 'components_journal_gallery_blocks';
+  info: {
+    displayName: 'gallery-block';
+    icon: 'landscape';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    images: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    layout: Schema.Attribute.Enumeration<
+      ['carousel', 'masonry-2', 'masonry-3']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'carousel'>;
+  };
+}
+
+export interface JournalImageBlock extends Struct.ComponentSchema {
+  collectionName: 'components_journal_image_blocks';
+  info: {
+    displayName: 'image-block';
+    icon: 'landscape';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface JournalRichTextBlock extends Struct.ComponentSchema {
+  collectionName: 'components_journal_rich_text_blocks';
+  info: {
+    displayName: 'rich-text-block';
+    icon: 'bold';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    fontSize: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 30;
+          min: 5;
+        },
+        number
+      >;
+  };
+}
+
+export interface JournalTwoColumnBlock extends Struct.ComponentSchema {
+  collectionName: 'components_journal_two_column_blocks';
+  info: {
+    displayName: 'two-column-block';
+    icon: 'bulletList';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    imagePosition: Schema.Attribute.Enumeration<['left', 'right']>;
+  };
+}
+
+export interface JournalVideoBlock extends Struct.ComponentSchema {
+  collectionName: 'components_journal_video_blocks';
+  info: {
+    displayName: 'video-block';
+    icon: 'monitor';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    isExternalVideo: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    url: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'files' | 'videos'>;
+  };
+}
+
 export interface NavigationFooterColumn extends Struct.ComponentSchema {
   collectionName: 'components_navigation_footer_columns';
   info: {
@@ -407,6 +487,23 @@ export interface SharedPricingTier extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'cursor';
+  };
+  attributes: {
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    metaTitle: Schema.Attribute.String;
+    noIndex: Schema.Attribute.Boolean;
+    ogImage: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
 export interface SharedTag extends Struct.ComponentSchema {
   collectionName: 'components_shared_tags';
   info: {
@@ -434,6 +531,11 @@ declare module '@strapi/strapi' {
       'block.visit': BlockVisit;
       'block.wellness-and-leisure': BlockWellnessAndLeisure;
       'block.wine-and-dine': BlockWineAndDine;
+      'journal.gallery-block': JournalGalleryBlock;
+      'journal.image-block': JournalImageBlock;
+      'journal.rich-text-block': JournalRichTextBlock;
+      'journal.two-column-block': JournalTwoColumnBlock;
+      'journal.video-block': JournalVideoBlock;
       'navigation.footer-column': NavigationFooterColumn;
       'navigation.link': NavigationLink;
       'navigation.menu-item': NavigationMenuItem;
@@ -444,6 +546,7 @@ declare module '@strapi/strapi' {
       'shared.exhibition': SharedExhibition;
       'shared.features': SharedFeatures;
       'shared.pricing-tier': SharedPricingTier;
+      'shared.seo': SharedSeo;
       'shared.tag': SharedTag;
     }
   }
