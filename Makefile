@@ -1,4 +1,4 @@
-BACKUP_FILE = backup2410
+BACKUP_FILE = backup2910
 
 # Tạo bản sao lưu vào file backup.tar.gz
 export:
